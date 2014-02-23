@@ -1,0 +1,26 @@
+Instructions for installation in SquareSpace without turning developer mode on:
+
+I'm supposing:
+* You want to add a personalized, squarespace-independent age verification page to your SquareSpace site. I mean: this page is not created using SquareSpace.
+* You have done the proper configuration in your hosting to redirect your domain to your SquareSpace site.
+* You have access to your domain host's administrative console (ISPConfig, CPanel or whatever you are using) in order to change the DNS configuration.
+
+Steps for installation:
+1. Via ssh (or whatever your hosting allows you to use), login to your host's console.
+2. Create a directory in your host's site root folder, named "verification" (or whatever you want).
+3. Copy (your modified version) of the files: age.html, age.js, denied.html and style.css in the new directory "verification".
+4. Sign into the domain host's administrative console for your domain.
+5. Create a subdomain, named "verifi-sub" with redirection type L and the redirection path "/verification/".
+6. Create a type A record on the DNS of your domain, where host name should be "verifi-sub" and IP address should be your hosting IP, not the SquareSpace one.
+7. Login to your SquareSpace site configuration.
+8. Go to Settings -> Code Injection.
+9. In the header section, copy the script entries of the sample index.html file, but with the appropiate urls, for example:
+
+<script type="text/javascript" src="http://verfi-sub.mydomain.com/age.js"></script>
+<script type="text/javascript">
+    document.onload = checkAge(document.URL);
+</script>
+
+10. Save settings.
+
+Enjoy!

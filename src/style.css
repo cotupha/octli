@@ -1,0 +1,47 @@
+html{
+    height: 100%;
+}
+body{
+    background-color: #F55824;
+    font-family: Bookman Old Style;
+    font-size: 13pt;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    height: 100%
+}
+body a{
+    color: white;
+    text-decoration: none;
+}
+.main-wrapper{
+    height: 100%;
+    display: table;
+    width: 100%;
+}
+.denied-wrapper { 
+    background-repeat: no-repeat;
+    background-color: #F55824;
+    height: 100%;
+    display: table;
+    width: 100%;
+    font-size: 23pt;
+    font-weight: bold;
+}
+.main-wrapper .wrapper-cell, .denied-wrapper .wrapper-cell {
+    display: table-cell;
+    vertical-align: middle;
+}
+.main-wrapper .centerBlock, .denied-wrapper .centerBlock {
+    margin: 0 auto;
+}
+.question {
+    font-size: 23pt;
+    font-weight: bold;
+}
+
+.answer a {
+    color: white;
+    font-size: 23pt;
+    font-weight: bold;
+}
